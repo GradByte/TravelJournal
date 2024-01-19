@@ -1,6 +1,11 @@
 # TravelJournal
+With this application, you can keep track of your business or personal travels. Add a picture to your travel and it'll help you to remember those days. Current version has only for different element for a travel. These are photo, country, city, and type("Business"/"Personal"). In the near future, "note" part can be added to travels. With that, you're going to be able to jot down your travel story too.
 
-The detailed explanation of this code will be written soon...
+## App Features
+- Add new travel
+- Delete travel by swiping
+- View travel details
+- Edit travel
 
 | ![Main Page](https://github.com/GradByte/TravelJournal/blob/main/screenshots/MainPage.png) | ![Add Travel](https://github.com/GradByte/TravelJournal/blob/main/screenshots/AddTravel.png) | ![Travel Details](https://github.com/GradByte/TravelJournal/blob/main/screenshots/TravelDetails.png) | ![Edit Travel](https://github.com/GradByte/TravelJournal/blob/main/screenshots/EditTravel.png) |
 | --- | --- | --- | --- |
