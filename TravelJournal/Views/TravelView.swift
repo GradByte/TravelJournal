@@ -15,6 +15,7 @@ struct TravelView: View {
     @State private var country = ""
     @State private var city = ""
     @State private var type = ""
+    @State private var note = ""
     @State private var editType = false
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedPhotoData: Data?
@@ -56,6 +57,8 @@ struct TravelView: View {
                     Text("\(travelItem.country)")
                     Text("\(travelItem.city)")
                     Text("\(travelItem.type)")
+                    Text("\(travelItem.note)")
+                        .fixedSize(horizontal: false, vertical: true)
                 } else {
                     TextField("\(travelItem.country)", text: $country)
                     TextField("\(travelItem.city)", text: $city)
@@ -67,6 +70,8 @@ struct TravelView: View {
                     .onAppear() {
                         self.type = travelItem.type
                     }
+                    TextEditor(text: $note)
+                        .disableAutocorrection(true)
                 }
                 
             }   header: {
@@ -80,6 +85,7 @@ struct TravelView: View {
                     self.city = self.travelItem.city
                     self.type = self.travelItem.type
                     self.selectedPhotoData = self.travelItem.photo
+                    self.note = self.travelItem.note
                     self.editType.toggle()
                 } label: {
                     Image(systemName: "square.and.pencil")
@@ -90,6 +96,7 @@ struct TravelView: View {
                     travel.items[index].country = country
                     travel.items[index].city = city
                     travel.items[index].type = type
+                    travel.items[index].note = note
                     travel.items[index].photo = selectedPhotoData
                     self.editType.toggle()
                     dismiss()

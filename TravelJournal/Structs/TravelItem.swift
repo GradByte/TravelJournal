@@ -13,6 +13,7 @@ struct TravelItem: Identifiable, Codable {
     var city: String
     var type = "Business"
     var photo: Data?
+    var note: String
     
     // Explicitly define CodingKeys enum to silence the id warning
     enum CodingKeys: String, CodingKey {
@@ -21,13 +22,15 @@ struct TravelItem: Identifiable, Codable {
         case city
         case type
         case photo
+        case note
     }
     
-    init(country: String, city: String, type: String = "Business", photo: Data? = nil) {
+    init(country: String, city: String, type: String = "Business", photo: Data? = nil, note: String) {
         self.id = UUID()
         self.country = country
         self.city = city
         self.type = type
         self.photo = photo
+        self.note = note
     }
 }

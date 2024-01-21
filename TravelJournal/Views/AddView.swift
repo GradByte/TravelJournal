@@ -15,6 +15,7 @@ struct AddView: View {
     @State private var country = ""
     @State private var city = ""
     @State private var type = "Personal"
+    @State private var note = "Note"
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedPhotoData: Data?
     
@@ -23,18 +24,6 @@ struct AddView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Country Name", text: $country)
-                    .disableAutocorrection(true)
-                
-                TextField("City Name", text: $city)
-                    .disableAutocorrection(true)
-                
-                Picker("Trip Type", selection: $type) {
-                    ForEach(types, id: \.self) {
-                        Text($0)
-                    }
-                }
-                
                 Section {
                     if let selectedPhotoData,
                        let image = UIImage(data: selectedPhotoData) {
@@ -55,11 +44,26 @@ struct AddView: View {
                     }
                 }
                 
+                TextField("Country Name", text: $country)
+                    .disableAutocorrection(true)
+                
+                TextField("City Name", text: $city)
+                    .disableAutocorrection(true)
+                
+                Picker("Trip Type", selection: $type) {
+                    ForEach(types, id: \.self) {
+                        Text($0)
+                    }
+                }
+                
+                TextEditor(text: $note)
+                    .disableAutocorrection(true)
+                
             }
             .navigationTitle("Add New Travel")
             .toolbar {
                 Button("Add") {
-                    let item = TravelItem(country: country, city: city, type: type, photo: selectedPhotoData)
+                    let item = TravelItem(country: country, city: city, type: type, photo: selectedPhotoData, note: note)
                     travel.items.append(item)
                     dismiss()
                     

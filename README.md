@@ -1,5 +1,5 @@
 # TravelJournal
-With this application, you can keep track of your business or personal travels. Add a picture to your travel and it'll help you to remember those days. The current version has only for different element for a travel. These are photo, country, city, and type("Business"/"Personal"). In the near future, the "note" part can be added to travels. With that, you're going to be able to jot down your travel story too.
+With this application, you can keep track of your business or personal travels. Add a picture to your travel and it'll help you to remember those days. The current version has only for different element for a travel. These are photo, country, city, and type("Business"/"Personal"). In the near future, the "note" part can be added to travels. With that, you're going to be able to jot down your travel story too. (Note part is added, you can type down whatever you like to that space!!!)
 
 ## App Features
 - Add new travel
